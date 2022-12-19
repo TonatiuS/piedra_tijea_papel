@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+        <title>Piedra | Papel | Tijerass</title>
+    </head>
+    <body>
+    <div class="caja">
+        <h1>Piedra, Papel o Tijera</h1>
+        <div class= "marcador">
+            <div id="jugador_puntos"></div>
+            <p>-</p>
+            <div id="pc_puntos"></div>
+        </div>
+        <div>marcador </div>
+        <!-- <hr> -->
+    </div>
+    <div class="contenedor-grande">
+
+        <div class="contenedor">
+            <div>tu</div>
+            <p>elige una opcion</p>
+                <img id="btn-piedra" class="btn-ataques" src="assets/Piedra.PNG" alt="">
+                <img id="btn-papel" class="btn-ataques" src="assets/Papel.PNG" alt="">
+                <img id="btn-tijeras" class="btn-ataques" src="assets/Tijeras.PNG" alt="">
+
+        </div>
+            
+            <div id="campo-batalla" class="campo-batalla">
+                <div id="img-ataque-jugador" class="caja-batala"><!--<img class="img-batalla" src="assets/Papel.PNG" alt="">--></div>
+                <div class="caja-batala"><p class="text-mensajes">VS</p></div>
+                <div id="img-ataque-pc" class="caja-batala"><!--<img class="img-batalla" src="assets/Piedra.PNG" alt="">--></div>
+            </div>
+
+        <div class="contenedor">
+            <div>computadora</div>
+            <p></p>
+            <div class="manos-compu">
+
+                <img id="btn-piedra" class="btn-ataques" src="assets/Piedra.PNG" alt="">
+                <img id="btn-papel" class="btn-ataques" src="assets/Papel.PNG" alt="">
+                <img id="btn-tijeras" class="btn-ataques" src="assets/Tijeras.PNG" alt="">
+            </div>
+        </div>
+    
+
+
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>

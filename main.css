@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+
+/* body{
+} */
+
+.caja{
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.marcador{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    font-size: 50px;
+}
+
+.marcador-final{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    font-size: 50px;
+}
+
+hr{
+    height:100vh;
+    width:.5vw;
+    border-width:0;
+    color:#000;
+    background-color:#000;
+}
+
+.contenedor{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-left: solid 1px black;
+    border-right:solid 1px black ;
+}
+.manos{
+    display: flex;
+    flex-direction: column;
+ 
+}
+.manos-compu{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+}
+.contenedor-grande { 
+    display: flex;
+    flex-direction: row;
+    height:100%; 
+    width: 100%;
+    margin:0;
+    padding:0;
+}
+
+.campo-batalla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    border-radius: 20px;
+    /* height:300px;
+    width:300px; */
+}
+
+.caja-batala{
+    margin: 25px;
+
+}
+
+.text-mensajes{
+    font-size: 45px;
+}
+
+.img-batalla{
+    border-radius: 50%;
+}
+
+.btn-ataques{
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.btn-ataques:hover{
+    border: 2px solid red;
+    cursor: pointer;
+    margin: 18px;
+}

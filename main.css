@@ -110,13 +110,13 @@ hr{
 }
 
 .mano-jugador{
-    width: 150px;
+    width: 100px;
     border-radius: 50%;
     margin: 20px;
 }
 
 .mano-cpu{
-    width: 150px;
+    width: 100px;
     border-radius: 50%;
     margin: 20px;
 }

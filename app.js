@@ -15,7 +15,79 @@ let jugador = 0;
 let pc = 0;
 
 
+function iniciar(){
+    seccionBatalla.style.display = 'none';
+    seteoMarcador()
+}
 
+function seteoMarcador(){
+    jugadorPuntos.innerHTML = jugador
+    pcPuntos.innerHTML = pc
+}
+
+
+btnPiedra.addEventListener('click', function(){
+    opcionJugador = "Piedra";
+    tiradaJugador();
+})
+
+btnPapel.addEventListener('click', function(){
+    opcionJugador = "Papel";
+    tiradaJugador();
+})
+
+btnTijeras.addEventListener('click', function(){
+    opcionJugador = "Tijeras";
+    tiradaJugador();
+})
+
+
+function tiradaJugador(){
+    var aleaorio = Aleatorio();
+
+    if(aleaorio == 0){
+        opcionPc = "Piedra";
+    }else if(aleaorio == 1){
+        opcionPc = "Papel";
+    }else if(aleaorio == 2){
+        opcionPc = "Tijeras"
+    };
+
+    batalla()
+
+}
+
+function batalla(){
+    if(opcionJugador == opcionPc){
+    }else if(opcionJugador == "Piedra" && opcionPc == "Tijeras"){
+        ganaste()
+    }else if(opcionJugador == "Papel" && opcionPc == "Piedra"){
+        ganaste()
+    }else if(opcionJugador == "Tijeras" && opcionPc == "Papel"){
+        ganaste()
+    }else{
+        pc--;
+    };
+    seteoMarcador()
+    resulltado()
+
+}
+
+
+function ganaste(){
+    jugador++;
+}
+
+
+function Aleatorio(){
+    let n = Math.floor(Math.random() * 3);
+    return n;
+}
+
+function temporizador(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+}
+  
 const imagenes = [
     {
         name: "Piedra",
@@ -29,97 +101,19 @@ const imagenes = [
         name: "Tijeras",
         url: "assets/Tijeras.PNG" 
     }
-];
+]
 
-
-
-function iniciar(){
-    seccionBatalla.style.display = 'none';
-    seteoMarcador()
-};
-
-function seteoMarcador(){
-    jugadorPuntos.innerHTML = jugador
-    pcPuntos.innerHTML = pc
-};
-
-
-btnPiedra.addEventListener('click', function(){
-    opcionJugador = "Piedra";
-    opPc();
-});
-
-btnPapel.addEventListener('click', function(){
-    opcionJugador = "Papel";
-    opPc();
-});
-
-btnTijeras.addEventListener('click', function(){
-    opcionJugador = "Tijeras";
-    opPc();
-})
-
-
-function opPc(){
-    var aleaorio = nAleatorio();
-
-    if(aleaorio == 0){
-        opcionPc = "Piedra";
-    }else if(aleaorio == 1){
-        opcionPc = "Papel";
-    }else if(aleaorio == 2){
-        opcionPc = "Tijeras"
-    };
-
-    batalla();
-
-};
-
-function batalla(){
-    if(opcionJugador == opcionPc){
-        msj = "Empate";
-    }else if(opcionJugador == "Piedra" && opcionPc == "Tijeras"){
-        ganaste()
-    }else if(opcionJugador == "Papel" && opcionPc == "Piedra"){
-        ganaste()
-    }else if(opcionJugador == "Tijeras" && opcionPc == "Papel"){
-        ganaste()
-    }else{
-        pc--;
-    };
-    seteoMarcador()
-    addImagenes();
-
-}
-
-
-function ganaste(){
-    jugador++;
-}
-
-
-function nAleatorio(){
-    let n = Math.floor(Math.random() * 3);
-    return n;
-}
-
-function sleep(ms) {
-    return new Promise((resolve) => setTimeout(resolve, ms));
-  }
-  
-
-
-function addImagenes(){
-    for(let i=0;i<imagenes.length;i++){
+function resulltado(){
+    for(let i=0;i< 3;i++){
         if(opcionJugador == imagenes[i].name){
             imgJugador = imagenes[i].url;
-            var inserta = `<img class="img-batalla" src=${imgJugador} alt="">`;
+            var inserta = `<img class="img-batalla" src=${imgJugador}>`;
             imgAtaqueJugador.innerHTML = inserta;
         };
         
         if(opcionPc == imagenes[i].name){
             imgPc = imagenes[i].url;
-            var inserta = `<img class="img-batalla" src=${imgPc} alt="">`;
+            var inserta = `<img class="img-batalla" src=${imgPc}>`;
             imgAtaquePc.innerHTML = inserta;
         };
         
@@ -127,14 +121,12 @@ function addImagenes(){
 
 
     seccionBatalla.style.display = 'flex';
-    test(2000)
+    esperar(3000)
     
-};
+}
 
-async function test(time) {
-    console.log('start timer');
-    await sleep(time);
-    console.log('after 1 second');
+async function esperar(time) {
+    await temporizador(time);
     seccionBatalla.style.display = 'none'; 
 }
 

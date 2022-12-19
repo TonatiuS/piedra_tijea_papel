@@ -4,12 +4,33 @@
 /* body{
 } */
 
-.caja{
+.caja-marcador{
     font-family: 'Josefin Sans', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
 
+}
+
+.titulo-marcador{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.titulo-jugador{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    
+    align-items: center;
+}
+
+.titulo-cpu{
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+    margin-left: 15%;
+    align-items: center;
 }
 
 .marcador{
@@ -30,7 +51,7 @@
 
 hr{
     height:100vh;
-    width:.5vw;
+    width:.7vw;
     border-width:0;
     color:#000;
     background-color:#000;
@@ -40,8 +61,16 @@ hr{
     display: flex;
     width: 100%;
     flex-direction: column;
-    border-left: solid 1px black;
-    border-right:solid 1px black ;
+    
+}
+
+.contenedor-manos{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-right: 95%;
+    
+
 }
 .manos{
     display: flex;
@@ -51,7 +80,8 @@ hr{
 .manos-compu{
     display: flex;
     flex-direction: column;
-    margin-left: auto;
+    margin-left: 50%;
+
 }
 .contenedor-grande { 
     display: flex;
@@ -62,19 +92,13 @@ hr{
     padding:0;
 }
 
-.campo-batalla{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
+.contenedor-resultado{
     border-radius: 20px;
-    /* height:300px;
-    width:300px; */
-}
-
-.caja-batala{
-    margin: 25px;
-
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 20%;
 }
 
 .text-mensajes{
@@ -85,13 +109,19 @@ hr{
     border-radius: 50%;
 }
 
-.btn-ataques{
+.mano-jugador{
     width: 150px;
     border-radius: 50%;
     margin: 20px;
 }
 
-.btn-ataques:hover{
+.mano-cpu{
+    width: 150px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.mano-jugador:hover{
     border: 2px solid red;
     cursor: pointer;
     margin: 18px;
